@@ -383,6 +383,23 @@ actor = discreteinvrnd(p,1,1);
 end
 
 
+function condP = condprob(p)
+
+K = length(p);
+condP = zeros(K);
+
+for i=1:K
+    ix = [1:K]~=i;
+    px = p(i);
+    py = p(ix);
+    
+    py = py./repmat(sum(py),K-1,1);
+    condP(i,ix) = (repmat(px,K-1,1).*py)';
+end
+
+end
+
+
 
 
 
