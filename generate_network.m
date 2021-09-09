@@ -14,8 +14,6 @@ elseif strcmp(type,'full')
     S = ones(length(groups));
     S = S-eye(size(S));
 elseif strcmp(type,'scalefree')
-    S = BAgraph_dir(length(groups),6,6);
-elseif strcmp(type,'powerlaw')
     if beta==-1
         beta = 1;
     end
